@@ -2,7 +2,9 @@ class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
         Map={}
         for n in strs:
-            key="".join(sorted(n))
+            l=list(n)
+            l.sort()
+            key="".join(l)
             if key not in Map:
                 Map[key]=[]
             Map[key].append(n)
